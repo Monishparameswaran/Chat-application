@@ -18,7 +18,7 @@ var (
 
 func main() {
 
-	http.Handle("/", http.FileServer(http.Dir("/home/monish/Extras/Chat-application/frontend")))
+	http.Handle("/", http.FileServer(http.Dir("/home/jagan/Development/Chat-application/frontend")))
 	http.HandleFunc("/home", getnamehandler)
 	http.HandleFunc("/post", posthandler)
 	http.HandleFunc("/first.html", servefirstpage)

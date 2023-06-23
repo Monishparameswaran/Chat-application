@@ -39,8 +39,9 @@
         <div class="col-2">
              <h3>Friends List</h3>
              <ul>
-                <li>Monish</li>
-                <li>Jagan</li>
+                {{ range . }}
+                <li>{{ .Name }}</li>
+                {{ end }}
              </ul>
         </div>
     </div>
