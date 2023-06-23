@@ -84,3 +84,19 @@ background:greenyellow;
 display:inline-block;
 margin-right: 10px;
 }
+
+.chatgpt-btn{
+    margin-left:60px;
+    margin-top:30px;
+    padding:14px;
+    padding-left:30px;
+    padding-right:30px;
+    background-color:#03a9f4;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    display: inline-block;
+  }

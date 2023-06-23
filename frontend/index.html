@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+   <div class="container">
+    <div class="chatbox">
+        <form class="col-1" method="post" action="/post">
+       <div class="msg-row">
+        <div class="msg-text">
+        {{ range . }}
+        <p><strong>{{ .Name }}: </strong>{{ .Msg }}</p>
+        {{ end }}
+        </div>
+       </div>
+      
+       <input type="text" method="POST" action="/post" placeholder="Type your text here...">
+       <button type="submit" style=" margin-left:60px;
+       padding:10px;
+       padding-left:25px;
+       padding-right:25px;
+       background-color:#03a9f4;
+       color:white;
+       font-weight:bold;
+       font-size:14px;
+       border:none;
+       border-radius:5px;
+       cursor:pointer;
+       display: inline-block;
+       position:relative;
+       left:395px;
+       bottom:50px;"
+        >Send</button>
+    </form>
+        <div class="col-2">
+             <h3>Friends List</h3>
+             <ul>
+                <li>Monish</li>
+                <li>Jagan</li>
+             </ul>
+        </div>
+    </div>
+   </div>
+</body>
+</html>

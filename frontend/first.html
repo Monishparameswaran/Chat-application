@@ -11,12 +11,13 @@
         <div class="content">
           <h2>welcome chat now!!</h2>
           <h2>welcome chat now!!</h2>
-          <div class="box">
-             <input class="name" type="text" placeholder="Your name" required>
-            <button type="submit" class="chat-btn" onClick="window.location.href='chat.html';">Chat</button>
-          </div>
+          <form class="box" method="post" action="/home">
+             <input class="name" type="text" placeholder="Your name" name="name" required>
+            <button type="submit" class="chat-btn" onClick="window.location.href='/post';">Chat</button>
+          </form>
         </div>
       </section>
      
 </body>
 </html>
+
