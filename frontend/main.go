@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 )
 
 type Message struct {
@@ -15,10 +16,15 @@ var (
 	usrname  string
 	messages []Message
 )
+var Mydir, derr = os.Getwd()
 
 func main() {
-
-	http.Handle("/", http.FileServer(http.Dir("/home/jagan/Development/Chat-application/frontend")))
+	if derr != nil {
+		fmt.Println(derr)
+	}
+	fmt.Println(Mydir)
+	fmt.Println(Mydir + "/first.html")
+	http.Handle("/", http.FileServer(http.Dir(Mydir)))
 	http.HandleFunc("/home", getnamehandler)
 	http.HandleFunc("/post", posthandler)
 	http.HandleFunc("/first.html", servefirstpage)
@@ -38,8 +44,8 @@ func getnamehandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(name)
 		usrname = name
 	}
-
-	http.ServeFile(w, r, "first.html")
+	//fmt.Fprintf(w, "hello")
+	http.ServeFile(w, r, Mydir+"/first.html")
 }
 func posthandler(w http.ResponseWriter, r *http.Request) {
 
@@ -55,7 +61,7 @@ func posthandler(w http.ResponseWriter, r *http.Request) {
 
 	}
 
-	tmpl, err := template.ParseFiles("index.html")
+	tmpl, err := template.ParseFiles(Mydir + "/index.html")
 	if err != nil {
 		fmt.Fprintf(w, "error in parsing the html")
 	}
